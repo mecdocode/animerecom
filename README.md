@@ -1,75 +1,115 @@
 # AnimeRec - AI-Powered Anime Recommendation App
 
-A production-grade, manga/comic-themed anime recommendation web app with two entry paths: Beginner Quiz or Pick/Search Your Favorites. Features real-time search over AniList, OpenRouter-powered recommendations, and blazing-fast UX with strict rate-limiting and error-handling guarantees.
+A modern, responsive web application that provides personalized anime recommendations using AI-powered suggestions and the AniList API.
 
-## 🎨 Features
+![AnimeRec Preview](https://via.placeholder.com/800x400/0A0A0A/E11D48?text=AnimeRec+App)
 
-- **Dual Entry Paths**: Quiz for beginners or search for experienced users
-- **AI-Powered Recommendations**: OpenRouter integration for personalized suggestions
-- **Real-time Search**: Instant search across 10,000+ anime titles via AniList API
-- **Manga/Comic Theme**: Beautiful design with ink borders, halftone patterns, and comic-style elements
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile
-- **Performance Optimized**: Rate limiting, caching, and progressive loading
-- **Accessibility**: Full keyboard navigation and screen reader support
+## Features
 
-## 🚀 Quick Start
+- AI-Powered Recommendations: Get personalized anime suggestions using advanced AI models
+- Interactive Quiz: Take a personality quiz to discover anime that matches your taste
+- Smart Search: Search for anime and get recommendations based on your selections
+- Detailed Information: View comprehensive details including scores, genres, and descriptions
+- Modern UI: Beautiful, responsive design with smooth animations and manga-inspired theme
+- Real-time Search: Fast search functionality with debounced input
+- Mobile Responsive: Optimized for all device sizes
+
+## Live Demo
+
+Deployed on Vercel: https://anime-recommendation-app.vercel.app
+
+## Tech Stack
+
+- Frontend: React 18 with React Router v6
+- Styling: Tailwind CSS with custom manga/comic theme
+- Animations: Framer Motion for smooth transitions
+- Data Fetching: React Query (TanStack Query) for efficient caching
+- APIs: 
+  - OpenRouter AI API for intelligent recommendations
+  - AniList GraphQL API for comprehensive anime data
+- Icons: Lucide React for consistent iconography
+- Deployment: Vercel with automatic deployments
+
+## Quick Start
 
 ### Prerequisites
 
-- Node.js 16+ and npm
-- OpenRouter API key (for AI recommendations)
+- Node.js 16+ 
+- npm or yarn
+- OpenRouter API key (free tier available)
 
 ### Installation
 
-1. **Clone and install dependencies:**
+1. Clone the repository
 ```bash
-cd "anime recommendation"
+git clone https://github.com/yourusername/anime-recommendation-app.git
+cd anime-recommendation-app
+```
+
+2. Install dependencies
+```bash
 npm install
 ```
 
-2. **Set up environment variables:**
-Create a `.env` file in the root directory:
-```env
-REACT_APP_OPENROUTER_API_KEY=your-openrouter-api-key-here
+3. Set up environment variables
+```bash
+cp .env.example .env
 ```
 
-3. **Start the development server:**
+Edit .env and add your OpenRouter API key:
+```env
+REACT_APP_OPENROUTER_API_KEY=sk-or-v1-your_api_key_here
+REACT_APP_OPENROUTER_MODEL=meta-llama/llama-3.2-3b-instruct:free
+```
+
+4. Start the development server
 ```bash
 npm start
 ```
 
-The app will open at `http://localhost:3000`
+The app will be available at http://localhost:3000.
 
-## 🏗️ Project Structure
+## Environment Variables
 
-```
-src/
-├── components/          # Reusable UI components
-│   ├── AppShell.js     # Main layout with header/footer
-│   ├── AnimeCard.js    # Anime display card
-│   ├── SearchBar.js    # Search with autocomplete
-│   └── ErrorBoundary.js # Error handling
-├── pages/              # Route components
-│   ├── Landing.js      # Home page with trending
-│   ├── Quiz.js         # 5-question personality quiz
-│   ├── Search.js       # Search and select favorites
-│   ├── Recommendations.js # AI recommendation results
-│   └── AnimeDetails.js # Detailed anime information
-├── services/           # API integrations
-│   ├── anilistApi.js   # AniList GraphQL API
-│   └── recommendationApi.js # OpenRouter AI API
-├── contexts/           # React contexts
-│   └── ToastContext.js # Toast notifications
-└── App.js             # Main app component
+| Variable | Description | Required |
+|----------|-------------|----------|
+| REACT_APP_OPENROUTER_API_KEY | Your OpenRouter API key for AI recommendations | Yes |
+| REACT_APP_OPENROUTER_MODEL | AI model to use (default: meta-llama/llama-3.2-3b-instruct:free) | No |
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+1. **Push to GitHub**
+```bash
+git add .
+git commit -m "Ready for deployment"
+git push origin main
 ```
 
-## 🎯 User Flows
+2. **Deploy to Vercel**
+   - Visit [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Add environment variables in Vercel dashboard
+   - Deploy automatically!
 
-### Quiz Flow
-1. **Landing** → Take Quiz button
-2. **Quiz** → Answer 5 questions about preferences
-3. **Recommendations** → View AI-generated suggestions
-4. **Details** → Click any anime for full information
+## 🔑 Getting API Keys
+
+### OpenRouter API (Required)
+1. Visit [OpenRouter](https://openrouter.ai/)
+2. Sign up for a free account
+3. Navigate to API Keys section
+4. Generate a new API key
+5. Add it to your `.env` file
+
+## 📞 Support
+
+If you have any questions or need help:
+- Open an issue on GitHub
+- Email: meccode360@gmail.com
+
+---
+
+**Made with ❤️ for anime lovers everywhere**
 
 ### Search Flow
 1. **Landing** → Pick Favorites button
