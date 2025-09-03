@@ -73,12 +73,11 @@ module.exports = {
       },
       backgroundImage: {
         'halftone': 'radial-gradient(circle, #D9D9D9 1px, transparent 1px)',
-        'paper-texture': 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23f2f2f2" fill-opacity="0.4"%3E%3Ccircle cx="7" cy="7" r="1"/%3E%3Ccircle cx="27" cy="27" r="1"/%3E%3Ccircle cx="47" cy="47" r="1"/%3E%3C/g%3E%3C/svg%3E")'
+        'paper-texture': 'radial-gradient(circle at 7px 7px, #f2f2f2 1px, transparent 1px), radial-gradient(circle at 27px 27px, #f2f2f2 1px, transparent 1px), radial-gradient(circle at 47px 47px, #f2f2f2 1px, transparent 1px)'
       }
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp')
+    require('@tailwindcss/typography')
   ],
 }
