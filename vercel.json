@@ -1,5 +1,5 @@
 {
-  "name": "anime-recommendation-app",
+  "name": "animerecom",
   "version": 2,
   "builds": [
     {
@@ -19,9 +19,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "REACT_APP_OPENROUTER_API_KEY": "@openrouter_api_key",
-    "REACT_APP_OPENROUTER_MODEL": "@openrouter_model"
-  }
+  ]
 }
