@@ -2,9 +2,15 @@
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 
 // You'll need to set this environment variable or replace with your API key
-const OPENROUTER_API_KEY = process.env.REACT_APP_OPENROUTER_API_KEY;
+const OPENROUTER_API_KEY = process.env.REACT_APP_OPENROUTER_API_KEY || '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';
 const OPENROUTER_MODEL = process.env.REACT_APP_OPENROUTER_MODEL || 'meta-llama/llama-3.2-3b-instruct:free';
 const OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1';
+
+console.log('Environment check:', {
+  hasApiKey: !!OPENROUTER_API_KEY,
+  keyPrefix: OPENROUTER_API_KEY ? OPENROUTER_API_KEY.substring(0, 10) + '...' : 'none',
+  model: OPENROUTER_MODEL
+});
 
 if (!OPENROUTER_API_KEY) {
   console.warn('OpenRouter API key not found. Recommendations will use fallback data.');

@@ -111,6 +111,8 @@ If you have any questions or need help:
 
 **Made with ❤️ for anime lovers everywhere**
 
+🚀 **Live Demo**: [https://animerecom-jc14-1eufordha-mecs-projects-96110a08.vercel.app](https://animerecom-jc14-1eufordha-mecs-projects-96110a08.vercel.app)
+
 ### Search Flow
 1. **Landing** → Pick Favorites button
 2. **Search** → Real-time search and select 1-3 anime
