@@ -1,20 +1,8 @@
-// OpenRouter API integration for AI-powered recommendations
-const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
+// API integration for AI-powered recommendations via a serverless proxy
+const RECOMMENDATIONS_API_URL = '/api/recommendations'; // Use the Vercel proxy
 
-// You'll need to set this environment variable or replace with your API key
-const OPENROUTER_API_KEY = process.env.REACT_APP_OPENROUTER_API_KEY || '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';
+// The model is now configured on the client to be sent to the backend proxy
 const OPENROUTER_MODEL = process.env.REACT_APP_OPENROUTER_MODEL || 'meta-llama/llama-3.2-3b-instruct:free';
-const OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1';
-
-console.log('Environment check:', {
-  hasApiKey: !!OPENROUTER_API_KEY,
-  keyPrefix: OPENROUTER_API_KEY ? OPENROUTER_API_KEY.substring(0, 10) + '...' : 'none',
-  model: OPENROUTER_MODEL
-});
-
-if (!OPENROUTER_API_KEY) {
-  console.warn('OpenRouter API key not found. Recommendations will use fallback data.');
-}
 
 // Enhanced caching for recommendations
 const recommendationCache = new Map();
@@ -159,14 +147,11 @@ const processRecommendationQueue = async () => {
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
         
-        const response = await fetch(OPENROUTER_API_URL, {
+        const response = await fetch(RECOMMENDATIONS_API_URL, {
           signal: controller.signal,
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
             'Content-Type': 'application/json',
-            'HTTP-Referer': window.location.origin,
-            'X-Title': 'AnimeRec App'
           },
           body: JSON.stringify({
             model: OPENROUTER_MODEL,
