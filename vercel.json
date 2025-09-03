@@ -1,0 +1,27 @@
+{
+  "name": "anime-recommendation-app",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "REACT_APP_OPENROUTER_API_KEY": "@openrouter_api_key",
+    "REACT_APP_OPENROUTER_MODEL": "@openrouter_model"
+  }
+}
