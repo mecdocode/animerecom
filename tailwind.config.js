@@ -73,7 +73,7 @@ module.exports = {
       },
       backgroundImage: {
         'halftone': 'radial-gradient(circle, #D9D9D9 1px, transparent 1px)',
-        'paper-texture': 'radial-gradient(circle at 7px 7px, #f2f2f2 1px, transparent 1px), radial-gradient(circle at 27px 27px, #f2f2f2 1px, transparent 1px), radial-gradient(circle at 47px 47px, #f2f2f2 1px, transparent 1px)'
+        'paper-texture': 'repeating-radial-gradient(circle at 0 0, transparent 0, #f8f7f4 10px)'
       }
     },
   },

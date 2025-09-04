@@ -1,6 +1,9 @@
 {
   "name": "anime-rec-app",
   "version": 2,
+  "env": {
+    "CI": "false"
+  },
   "builds": [
     {
       "src": "package.json",
