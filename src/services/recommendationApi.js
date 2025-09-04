@@ -1,7 +1,7 @@
 // API integration for AI-powered recommendations via a serverless proxy
-const RECOMMENDATIONS_API_URL = '/api/recommendations'; // Use the Vercel proxy
+const RECOMMENDATIONS_API_URL = '/api/recommendations';
 
-// The model is now configured on the client to be sent to the backend proxy
+// Model configuration
 const OPENROUTER_MODEL = process.env.REACT_APP_OPENROUTER_MODEL || 'meta-llama/llama-3.2-3b-instruct:free';
 
 // Enhanced caching for recommendations
