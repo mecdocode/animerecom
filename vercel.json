@@ -1,8 +1,12 @@
 {
-  "name": "anime-rec-app",
   "version": 2,
   "public": true,
   "buildCommand": "CI=false npm run build",
+  "functions": {
+    "api/recommendations.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "builds": [
     {
       "src": "package.json",
@@ -12,14 +16,14 @@
       }
     },
     {
-      "src": "api/**/*.js",
+      "src": "api/recommendations.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/api/recommendations",
+      "dest": "/api/recommendations"
     },
     {
       "handle": "filesystem"

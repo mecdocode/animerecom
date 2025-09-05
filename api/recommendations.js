@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  const openRouterApiKey = process.env.REACT_APP_OPENROUTER_API_KEY;
+  const openRouterApiKey = process.env.OPENROUTER_API_KEY;
 
   if (!openRouterApiKey) {
     res.status(500).json({ error: 'API key not configured' });
