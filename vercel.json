@@ -1,12 +1,5 @@
 {
   "version": 2,
-  "public": true,
-  "buildCommand": "CI=false npm run build",
-  "functions": {
-    "api/recommendations.js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "builds": [
     {
       "src": "package.json",
