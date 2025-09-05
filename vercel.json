@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "functions": {
+    "api/recommendations.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "builds": [
     {
       "src": "package.json",
@@ -7,15 +12,12 @@
       "config": {
         "distDir": "build"
       }
-    },
-    {
-      "src": "api/recommendations.js",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/recommendations",
+      "methods": ["POST", "OPTIONS"],
       "dest": "/api/recommendations"
     },
     {
