@@ -1,6 +1,7 @@
 {
   "name": "anime-rec-app",
   "version": 2,
+  "public": true,
   "buildCommand": "CI=false npm run build",
   "builds": [
     {
